@@ -56,8 +56,13 @@ sub set_loginwindow {
 
 #==============================================================================#
 
-my $user = "someuser";
-my $pass = "mysecretpassword";
+if ( $#ARGV != 1 ) {
+    printf "%s\n", "Usage: autologon user pass";
+    die;
+}
+
+my $user = $ARGV[0];
+my $pass = $ARGV[1];
 my $enc  = kcpassword_xor($pass);
 
 write_pass($enc);
