@@ -66,9 +66,9 @@ my $pass = $ARGV[1];
 my $enc  = kcpassword_xor($pass);
 
 write_pass($enc);
-set_loginwindow($user);
+#set_loginwindow($user);
 
-system('killall','loginwindow');
+#system('killall','loginwindow');
 
 exit 0;
 #==============================================================================#
